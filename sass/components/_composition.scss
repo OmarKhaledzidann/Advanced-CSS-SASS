@@ -1,0 +1,50 @@
+ .composition
+ {
+    position: relative;
+
+
+   &__photo
+   {
+     width: 55%; //for responsive designs, we define width of images in percentage for flexibility in design.
+     box-shadow: 0rem 1.5rem 4rem rgba($color-black, .4);
+     border-radius: 2px;
+     position: absolute;
+     z-index: 10;
+     transition: all .2s;
+     outline-offset: 2rem; // the space between outer border and the image.
+
+      &--p1
+      {
+        left: 0;
+        top: -2rem;
+      }
+
+      &--p2
+      {
+        right: 0;
+        top: 2rem;
+      }
+
+      &--p3
+      {
+        left: 20%;
+        top: 10rem;
+      }
+
+      &:hover
+      {
+        outline: 1.5rem solid $color-primary; // we can make the border using "border property", but we cannot make the space between image and the outline border, so we use " outline property"
+        transform: scale(1.05) translateY(-.5rem);
+        box-shadow: 0rem 2.5rem 4rem rgba($color-black, .4);
+        z-index:20;
+      }
+
+    }
+
+    &:hover &__photo:not(:hover)
+    {
+      transform: scale(.95);
+    } 
+
+   
+ }

@@ -1,0 +1,58 @@
+/* Animation part for heading */
+
+@keyframes moveInLeft
+{
+  0% /* Initial State of the heading text*/
+  {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  
+
+  80% /* before the end */
+  {
+    transform: translateX(1rem);
+  }
+
+  100% /*Final state of the heading text*/
+  {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight
+{
+  0% /* Initial State of the heading text*/
+  {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% /* before the end */
+  {
+    transform: translateX(-1rem);
+  }
+
+  100% /*Final state of the heading text*/
+  {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom
+{
+  0% /* Initial State of the heading text*/
+  {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% /*Final state of the heading text*/
+  {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
