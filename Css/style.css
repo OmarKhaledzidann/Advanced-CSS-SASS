@@ -52,7 +52,7 @@ body {
   /*it will be inherited from the parent */
   font-weight: 400;
   line-height: 1.7;
-  color: aqua;
+  color: #777;
   /*padding: 30px;*/
   padding: 3rem; }
 
@@ -139,7 +139,7 @@ body {
 
 .btn--white {
   background-color: #fff;
-  color: aqua; }
+  color: #777; }
   .btn--white::after {
     background-color: #fff; }
 
