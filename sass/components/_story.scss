@@ -1,0 +1,72 @@
+.story
+{
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba($color-white, .6);
+  border-radius: 3px;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1); 
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+/*
+  & > *
+  {
+     // it worked with text ony but iit failed with shape, because class __shape have transform property which have the precedence. That means we cannot use 2 transform properties at the same time. So, we will apply this on evey elemt seperatly.
+  }
+*/
+  &__shape
+  {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%); // raduis of the circle is 50% of the width "7.5rem", so the diameter is 100% "15rem" as the width and height
+    //it means the 50% for vertical and horizontal the shape must be floated as above
+
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); // the best way to move an element which is floated, the "transform property" and don't mess up with margins or anything like that.
+    position: relative;
+    
+  }
+
+  &__img
+  {
+    height:100%; // it's 100% if the circular shape because it's part of it.
+    transform: translateX(-4rem) scale(1.4); //to center the image
+    transition: all .5s;
+  }
+
+  &__text
+  {
+    transform: skewX(12deg);
+  }
+
+  &__caption
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%); 
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s; 
+  }
+
+  &:hover &__caption
+  {
+    opacity: 1;
+    transform: translate(-50%, -50%); 
+  }
+
+  &:hover &__img
+  {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); 
+  }
+}
