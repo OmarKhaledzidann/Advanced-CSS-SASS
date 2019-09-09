@@ -2,6 +2,7 @@
 
 .btn
 {
+  &,
   &:link,
   &:visited
   {
@@ -13,6 +14,10 @@
     position: relative;
     transition: all .2s;
     font-size: $default-font-size;
+    
+    // change for button
+    border: none;
+    cursor: pointer;
   }
 
   &:hover
@@ -29,7 +34,7 @@
 
   &:active
   {
-    transform: translateY(-1px);
+    transform: translateY(-1px); 
     box-shadow: 0 .5rem 1rem rgba( 0, 0, 0, .2);
   }
 
